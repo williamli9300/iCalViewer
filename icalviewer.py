@@ -62,7 +62,6 @@ def process_lines(lines, earliest_date, include_repeats, include_description):
                     last_line_text = current_event[7]
                     joined_text = last_line_text + remaining_text
                     current_event[7] = joined_text
-                prev_line_type = ""
             elif line == "END:VEVENT":
                 if int(current_event[0]) >= earliest_date:
                     all_events.append(current_event)
@@ -149,16 +148,16 @@ def format_output(events, cal_name, timezone, alt_location, include_repeats, inc
                     else:
                         wkday = wkday_dict[repeat_wkday]
                     if repeat_end_date != '':
-                        output.append("  > Repeats " + repeat_freq + " every " + wkday + " until " + repeat_end_date + ".")
+                        output.append("  > Repeats:  " + repeat_freq + " every " + wkday + " until " + repeat_end_date + ".")
                     else:
-                        output.append("  > Repeats " + repeat_freq + " every " + wkday + ".")
+                        output.append("  > Repeats:  " + repeat_freq + " every " + wkday + ".")
                 else:
-                    output.append("  > Repeats " + repeat_freq + ".")
+                    output.append("  > Repeats:  " + repeat_freq + ".")
         output.append("  > Location: " + location)
         if include_description == True:
             description = event[7]
             if description != '':
-                output.append("  > Description: " + description)
+                output.append("  > Notes:    " + description)
         output.append("")
     #print(output)
     return output
