@@ -2,7 +2,7 @@
 
 #### by Will Li | [https://github.com/williamli9300/iCalViewer/](https://github.com/williamli9300/iCalViewer/) | v0.1.0
 
-A simple Python utility to print out all events in an iCalendar file.
+A simple Python utility to view all events in an iCalendar file. Can be used to print to console, save as text file, or both.
 
 ## Introduction
 This utility prints all events contained in an iCalendar file, in date order (earliest to latest), in the following format:
